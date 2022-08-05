@@ -1,4 +1,4 @@
-package com.company.Creational.BuilderExcercise1;
+package com.company.Creational.Builder.BuilderExcercise1;
 
 public class SpaceShip {
 
