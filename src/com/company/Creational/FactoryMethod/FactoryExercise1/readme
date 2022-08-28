@@ -1,0 +1,26 @@
+
+
+        Factory Method Design Pattern Exercise 1
+
+        Definition:
+            Defines an interface for creating an object, but let subclasses decide which class to instantiate.
+
+
+        Use:
+            It is one of the best ways to create an object where object creation logic is hidden from the client.
+
+
+        Example: How_to
+
+            Step 1: Create a public interface Notification with a void notifyUser method
+            Step 2: Create 3 classes that implement the interface SmsNotification, EmailNotification, PushNotification,
+                    each with a sout message
+            Step 3: Create a factory class NotificationFactory to instantiate the concrete class
+            Step 4: Add method to factory class, createNotification with string param and Notification return type
+            Step 5: Add if else switch logic to createNotification to return new class from Step 2
+
+        In main:
+
+            NotificationFactory notificationFactory = new NotificationFactory();
+
+            notificationFactory.createNotification("Push").notifyUser();

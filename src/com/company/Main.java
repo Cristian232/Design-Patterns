@@ -1,16 +1,16 @@
 package com.company;
 
 
-import com.company.Creational.SimpleFactory.Post;
-import com.company.Creational.SimpleFactory.PostFactory;
+import com.company.Creational.FactoryMethod.FactoryExercise1.Notification;
+import com.company.Creational.FactoryMethod.FactoryExercise1.NotificationFactory;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Post post = PostFactory.createPost("news");
-        System.out.println(post);
+        NotificationFactory notificationFactory = new NotificationFactory();
 
+        notificationFactory.createNotification("Push").notifyUser();
 
 
     }
