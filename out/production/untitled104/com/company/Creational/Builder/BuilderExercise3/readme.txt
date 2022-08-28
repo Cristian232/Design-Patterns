@@ -19,5 +19,11 @@
     Step 5: Add to Builder class public method with Builder return type for each of the props, that sets them and returns this
     Step 6: Add to Builder class a method build that returns a new Account with param this
     Step 7: Set Account props in private constructor from Step 2 from builder param
+    Step 8: Override the toString method in Account
+
+    In main:
+
+    Account account = new Account.Builder().id(1).email("AAA").build();
+    System.out.println(account.toString());
 
 

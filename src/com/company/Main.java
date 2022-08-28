@@ -1,16 +1,15 @@
 package com.company;
 
 
-import com.company.Creational.Builder.BuilderExercise3.Account;
+import com.company.Creational.SimpleFactory.Post;
+import com.company.Creational.SimpleFactory.PostFactory;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Account account = new Account.Builder().id(1).email("AAA").build();
-        System.out.println(account.toString());
-
-
+        Post post = PostFactory.createPost("news");
+        System.out.println(post);
 
 
 
