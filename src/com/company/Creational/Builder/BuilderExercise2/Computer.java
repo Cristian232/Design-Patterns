@@ -1,4 +1,4 @@
-package com.company.Creational.Builder.BuilderExcercise2;
+package com.company.Creational.Builder.BuilderExercise2;
 
 public class Computer {
 
