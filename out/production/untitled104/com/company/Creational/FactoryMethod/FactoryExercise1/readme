@@ -20,3 +20,7 @@
             Step 5: Add if else switch logic to createNotification to return new class from Step 2
 
         In main:
+
+            NotificationFactory notificationFactory = new NotificationFactory();
+
+            notificationFactory.createNotification("Push").notifyUser();

@@ -3,9 +3,23 @@ package com.company.Creational.Prototype.FirstImplementation;
 
 import javafx.geometry.Point3D;
 
-public class GameUnit {
+public abstract class GameUnit implements Cloneable{
 
     private Point3D position;
+
+    @Override
+    public GameUnit clone() throws CloneNotSupportedException {
+        GameUnit unit = (GameUnit) super.clone();
+        unit.initialize();
+        return unit;
+    }
+
+    protected void initialize(){
+        this.position = Point3D.ZERO;
+        reset();
+    }
+
+    protected abstract void reset();
 
     public GameUnit(){
         position = Point3D.ZERO;
