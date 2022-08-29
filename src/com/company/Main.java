@@ -1,23 +1,32 @@
 package com.company;
 
 
-import com.company.Creational.Prototype.FirstImplementation.Swordsman;
-import javafx.geometry.Point3D;
+import com.company.Creational.AbstractFactory.FirstImplementation.AwsResourceFactory;
+import com.company.Creational.AbstractFactory.FirstImplementation.Instance;
+import com.company.Creational.AbstractFactory.FirstImplementation.ResourceFactory;
+import com.company.Creational.AbstractFactory.FirstImplementation.Storage;
 
 public class Main {
 
-    public static void main(String[] args) throws CloneNotSupportedException {
+    private ResourceFactory factory;
 
-        Swordsman s1 = new Swordsman();
-        s1.move(new Point3D(-10,0,0),20);
-        s1.atack();
+    public Main(ResourceFactory factory){
+        this.factory = factory;
+    }
 
-        System.out.println(s1);
-        Swordsman s2 = (Swordsman) s1.clone();
-        System.out.println("Cloned " + s2);
+    public Instance createServer(Instance.Capacity cap, int storageMib){
+        Instance instance = factory.createInstance(cap);
+        Storage storage = factory.createStorage(storageMib);
+        instance.attachStorage(storage);
+        return instance;
+    }
 
+    public static void main(String[] args)  {
 
-
+        Main aws = new Main(new AwsResourceFactory());
+        Instance i1 = aws.createServer(Instance.Capacity.small, 20480);
+        i1.start();
+        i1.stop();
 
     }
 
