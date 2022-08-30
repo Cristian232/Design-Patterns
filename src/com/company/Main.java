@@ -1,19 +1,33 @@
 package com.company;
 
 
-import com.company.Creational.Prototype.PrototypeExercise1.BookShop;
+import com.company.Creational.AbstractFactory.AbstractFactoryExercise1.EnemyShip;
+import com.company.Creational.AbstractFactory.AbstractFactoryExercise1.EnemyShipFactory;
+
+import java.util.Scanner;
 
 public class Main {
 
+    public static void main(String[] args) {
 
-    public static void main(String[] args) throws CloneNotSupportedException {
+        EnemyShipFactory shipFactory = new EnemyShipFactory();
 
-        BookShop bookShop1 = new BookShop();
-        bookShop1.setBookShop("BookShop 1");
-        bookShop1.loadBooks();
-        System.out.println(bookShop1.toString());
+        EnemyShip enemyShip = null;
 
-        BookShop bookShop2 = (BookShop) bookShop1.clone();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("What would you like to produce? (U/R/B)");
+
+        if (scanner.hasNextLine()){
+            String typeOfShip = scanner.nextLine();
+            enemyShip = shipFactory.makeEnemyShip(typeOfShip);
+
+            if (enemyShip != null){
+               // doStuffEnemy(enemyShip);
+            }
+
+        }else {
+            System.out.println( "Please enter U/R/B next time");
+        }
 
     }
 
