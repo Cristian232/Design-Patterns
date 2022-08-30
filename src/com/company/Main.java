@@ -1,32 +1,19 @@
 package com.company;
 
 
-import com.company.Creational.AbstractFactory.FirstImplementation.AwsResourceFactory;
-import com.company.Creational.AbstractFactory.FirstImplementation.Instance;
-import com.company.Creational.AbstractFactory.FirstImplementation.ResourceFactory;
-import com.company.Creational.AbstractFactory.FirstImplementation.Storage;
+import com.company.Creational.Prototype.PrototypeExercise1.BookShop;
 
 public class Main {
 
-    private ResourceFactory factory;
 
-    public Main(ResourceFactory factory){
-        this.factory = factory;
-    }
+    public static void main(String[] args) throws CloneNotSupportedException {
 
-    public Instance createServer(Instance.Capacity cap, int storageMib){
-        Instance instance = factory.createInstance(cap);
-        Storage storage = factory.createStorage(storageMib);
-        instance.attachStorage(storage);
-        return instance;
-    }
+        BookShop bookShop1 = new BookShop();
+        bookShop1.setBookShop("BookShop 1");
+        bookShop1.loadBooks();
+        System.out.println(bookShop1.toString());
 
-    public static void main(String[] args)  {
-
-        Main aws = new Main(new AwsResourceFactory());
-        Instance i1 = aws.createServer(Instance.Capacity.small, 20480);
-        i1.start();
-        i1.stop();
+        BookShop bookShop2 = (BookShop) bookShop1.clone();
 
     }
 
