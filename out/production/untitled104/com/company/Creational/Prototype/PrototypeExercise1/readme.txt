@@ -3,9 +3,10 @@
 
         Prototype Design Pattern
 
-        Definition:
+        Definition: Prototype is a creational design pattern that allows cloning objects,
+                    even complex ones, without coupling to their specific classes.
 
-        Use:
+        Use: When a system should be independent of how its products are created, composed, and represented
 
         Example: How_to
 
@@ -14,8 +15,13 @@
             Step 3: Add getters and setters / also toString
             Step 4: Add void loadBooks method in BookShop to populate with a for i books with some values
             Step 5: Implement Cloneable in BookShop class and override clone method
-            Step 6:
-            Step 7:
-            Step 8:
+            Step 6: In main, create a Bookshop 2 with a shallow copy of bookshop 1, cast to BookShop and add exception throws CloneNotSupported
+
 
         In main:
+                    BookShop bookShop1 = new BookShop();
+                    bookShop1.setBookShop("BookShop 1");
+                    bookShop1.loadBooks();
+                    System.out.println(bookShop1.toString());
+
+                    BookShop bookShop2 = (BookShop) bookShop1.clone();

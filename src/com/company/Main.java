@@ -1,23 +1,27 @@
 package com.company;
 
 
-
-import com.company.Creational.Singleton.FirstImplementation.EagerSingleton.EagerRegistry;
-import com.company.Creational.Singleton.FirstImplementation.LazySingeltonHolder.LazyRegistryIODH;
-import com.company.Creational.Singleton.FirstImplementation.LazySingleton.LazyRegistry;
+import com.company.Creational.ObjectPool.FirstImplementation.BitMap;
+import com.company.Creational.ObjectPool.FirstImplementation.ObjectPool;
+import javafx.geometry.Point2D;
 
 public class Main {
 
+
+    public static final ObjectPool<BitMap> bitmapPool = new ObjectPool<>(()->new BitMap("Logo.bmp"),10);
+
     public static void main(String[] args) {
 
-        //Eager Singleton
-        EagerRegistry registry = EagerRegistry.getInstance();
+        BitMap b1 = bitmapPool.get();
+        b1.setLocation(new Point2D(10,2));
+        BitMap b2 = bitmapPool.get();
+        b2.setLocation(new Point2D(5,3));
 
-        //Lazy Singleton
-        LazyRegistry registry1 = LazyRegistry.getInstance();
+        b1.draw();
+        b2.draw();
 
-        //Lazy Singleton with holder
-        LazyRegistryIODH registryIODH = LazyRegistryIODH.getInstance();
+        bitmapPool.release(b1);
+        bitmapPool.release(b2);
 
     }
 
