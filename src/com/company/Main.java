@@ -1,33 +1,23 @@
 package com.company;
 
 
-import com.company.Creational.AbstractFactory.AbstractFactoryExercise1.EnemyShip;
-import com.company.Creational.AbstractFactory.AbstractFactoryExercise1.EnemyShipFactory;
 
-import java.util.Scanner;
+import com.company.Creational.Singleton.FirstImplementation.EagerSingleton.EagerRegistry;
+import com.company.Creational.Singleton.FirstImplementation.LazySingeltonHolder.LazyRegistryIODH;
+import com.company.Creational.Singleton.FirstImplementation.LazySingleton.LazyRegistry;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        EnemyShipFactory shipFactory = new EnemyShipFactory();
+        //Eager Singleton
+        EagerRegistry registry = EagerRegistry.getInstance();
 
-        EnemyShip enemyShip = null;
+        //Lazy Singleton
+        LazyRegistry registry1 = LazyRegistry.getInstance();
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("What would you like to produce? (U/R/B)");
-
-        if (scanner.hasNextLine()){
-            String typeOfShip = scanner.nextLine();
-            enemyShip = shipFactory.makeEnemyShip(typeOfShip);
-
-            if (enemyShip != null){
-               // doStuffEnemy(enemyShip);
-            }
-
-        }else {
-            System.out.println( "Please enter U/R/B next time");
-        }
+        //Lazy Singleton with holder
+        LazyRegistryIODH registryIODH = LazyRegistryIODH.getInstance();
 
     }
 

@@ -1,0 +1,18 @@
+package com.company.Creational.Singleton.FirstImplementation.LazySingeltonHolder;
+
+public class LazyRegistryIODH {
+
+    private LazyRegistryIODH(){
+
+    }
+
+    private static class RegistryHolder {
+        static LazyRegistryIODH INSTANCE = new LazyRegistryIODH();
+    }
+
+    public static LazyRegistryIODH getInstance(){
+        return RegistryHolder.INSTANCE;
+    }
+
+
+}
