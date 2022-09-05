@@ -1,35 +1,27 @@
 package com.company;
 
-import com.company.Structural.Adapter.FirstImplementation.ClassAdapter.BusinessCardDesigner;
-import com.company.Structural.Adapter.FirstImplementation.ClassAdapter.Employee;
-import com.company.Structural.Adapter.FirstImplementation.ClassAdapter.EmployeeClassAdapter;
-import com.company.Structural.Adapter.FirstImplementation.ObjectAdappter.EmployeeObjectAdapter;
+import com.company.Structural.Bridge.FirstImplementation.FifoCollection;
+import com.company.Structural.Bridge.FirstImplementation.Queue;
+import com.company.Structural.Bridge.FirstImplementation.SingleLinkedList;
 
 public class Main {
 
     public static void main(String[] args) {
+        FifoCollection<Integer> collection = new Queue<>(new SingleLinkedList<>());
+        collection.offer(10);
+        collection.offer(20);
+        collection.offer(40);
+        collection.offer(60);
 
-        // Using a Class/Two-Way adapter
-        EmployeeClassAdapter adapter = new EmployeeClassAdapter();
-        populateEmployeeData(adapter);
-        BusinessCardDesigner designer = new BusinessCardDesigner();
-        String card = designer.designCard(adapter);
-        System.out.println(card);
+        System.out.println(collection.poll());
+        System.out.println(collection.poll());
+        System.out.println(collection.poll());
+        System.out.println(collection.poll());
 
-        // Using Object Adapter
-        Employee employee = new Employee();
-        populateEmployeeData(employee);
-        EmployeeObjectAdapter employeeObjectAdapter = new EmployeeObjectAdapter(employee);
-        card = designer.designCard(employeeObjectAdapter);
-        System.out.println(card);
-
+        System.out.println(collection.poll());
 
     }
 
-    private static void populateEmployeeData(Employee employee){
-            employee.setFullName("Elliot Alderson");
-            employee.setJobTitle("Security Engineer");
-            employee.setOfficeLocation("Allsafe CyberSecurity, New York");
-    }
+
 
 }
