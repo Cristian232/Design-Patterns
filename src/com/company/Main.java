@@ -1,28 +1,35 @@
 package com.company;
 
-
-import com.company.Creational.ObjectPool.FirstImplementation.BitMap;
-import com.company.Creational.ObjectPool.FirstImplementation.ObjectPool;
-import javafx.geometry.Point2D;
+import com.company.Structural.Adapter.FirstImplementation.ClassAdapter.BusinessCardDesigner;
+import com.company.Structural.Adapter.FirstImplementation.ClassAdapter.Employee;
+import com.company.Structural.Adapter.FirstImplementation.ClassAdapter.EmployeeClassAdapter;
+import com.company.Structural.Adapter.FirstImplementation.ObjectAdappter.EmployeeObjectAdapter;
 
 public class Main {
 
-
-    public static final ObjectPool<BitMap> bitmapPool = new ObjectPool<>(()->new BitMap("Logo.bmp"),10);
-
     public static void main(String[] args) {
 
-        BitMap b1 = bitmapPool.get();
-        b1.setLocation(new Point2D(10,2));
-        BitMap b2 = bitmapPool.get();
-        b2.setLocation(new Point2D(5,3));
+        // Using a Class/Two-Way adapter
+        EmployeeClassAdapter adapter = new EmployeeClassAdapter();
+        populateEmployeeData(adapter);
+        BusinessCardDesigner designer = new BusinessCardDesigner();
+        String card = designer.designCard(adapter);
+        System.out.println(card);
 
-        b1.draw();
-        b2.draw();
+        // Using Object Adapter
+        Employee employee = new Employee();
+        populateEmployeeData(employee);
+        EmployeeObjectAdapter employeeObjectAdapter = new EmployeeObjectAdapter(employee);
+        card = designer.designCard(employeeObjectAdapter);
+        System.out.println(card);
 
-        bitmapPool.release(b1);
-        bitmapPool.release(b2);
 
+    }
+
+    private static void populateEmployeeData(Employee employee){
+            employee.setFullName("Elliot Alderson");
+            employee.setJobTitle("Security Engineer");
+            employee.setOfficeLocation("Allsafe CyberSecurity, New York");
     }
 
 }
