@@ -1,24 +1,18 @@
 package com.company;
 
-import com.company.Structural.Bridge.FirstImplementation.FifoCollection;
-import com.company.Structural.Bridge.FirstImplementation.Queue;
-import com.company.Structural.Bridge.FirstImplementation.SingleLinkedList;
+import com.company.Structural.Decorator.Firstimplementation.HtmlEncodedMessage;
+import com.company.Structural.Decorator.Firstimplementation.Message;
+import com.company.Structural.Decorator.Firstimplementation.TextMessage;
 
 public class Main {
 
     public static void main(String[] args) {
-        FifoCollection<Integer> collection = new Queue<>(new SingleLinkedList<>());
-        collection.offer(10);
-        collection.offer(20);
-        collection.offer(40);
-        collection.offer(60);
 
-        System.out.println(collection.poll());
-        System.out.println(collection.poll());
-        System.out.println(collection.poll());
-        System.out.println(collection.poll());
+        Message m = new TextMessage("TextMessage");
+        System.out.println(m.getContent());
 
-        System.out.println(collection.poll());
+        Message decorator = new HtmlEncodedMessage(m);
+        System.out.println(decorator.getContent());
 
     }
 

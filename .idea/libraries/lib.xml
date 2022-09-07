@@ -1,10 +1,33 @@
 <component name="libraryTable">
   <library name="lib">
+    <ANNOTATIONS>
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/Java/jdk1.8.0_281/lib/mps-apache-commons" />
+    </ANNOTATIONS>
     <CLASSES>
       <root url="file://$PROJECT_DIR$/../../../../Program Files/Java/javafx-sdk-18.0.2/lib" />
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/Java/jdk1.8.0_281/lib/commons-net-3.8.0" />
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/Java/jdk1.8.0_281/lib/mps-apache-commons" />
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/Java/jdk1.8.0_281/lib/mps-apache-commons" />
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/Java/jdk1.8.0_281/lib/mps-apache-commons/lib" />
     </CLASSES>
-    <JAVADOC />
-    <SOURCES />
+    <JAVADOC>
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/Java/jdk1.8.0_281/lib/commons-net-3.8.0/apidocs" />
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/Java/jdk1.8.0_281/lib/mps-apache-commons" />
+    </JAVADOC>
+    <NATIVE>
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/Java/jdk1.8.0_281/lib/mps-apache-commons" />
+    </NATIVE>
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/Java/jdk1.8.0_281/lib/commons-net-3.8.0" />
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/Java/jdk1.8.0_281/lib/commons-net-3.8.0" />
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/Java/jdk1.8.0_281/lib/mps-apache-commons" />
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/Java/jdk1.8.0_281/lib/mps-apache-commons" />
+    </SOURCES>
     <jarDirectory url="file://$PROJECT_DIR$/../../../../Program Files/Java/javafx-sdk-18.0.2/lib" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../../../../Program Files/Java/jdk1.8.0_281/lib/commons-net-3.8.0" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../../../../Program Files/Java/jdk1.8.0_281/lib/mps-apache-commons" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../../../../Program Files/Java/jdk1.8.0_281/lib/commons-net-3.8.0" recursive="false" type="SOURCES" />
+    <jarDirectory url="file://$PROJECT_DIR$/../../../../Program Files/Java/jdk1.8.0_281/lib/commons-net-3.8.0" recursive="false" type="SOURCES" />
+    <jarDirectory url="file://$PROJECT_DIR$/../../../../Program Files/Java/jdk1.8.0_281/lib/mps-apache-commons" recursive="false" type="SOURCES" />
   </library>
 </component>
