@@ -1,24 +1,16 @@
 package com.company;
 
 
-import com.company.Structural.Facade.FirstImplementation.EmailFacade;
-import com.company.Structural.Facade.FirstImplementation.Order;
+import com.company.Structural.Flyweight.FirstImplementation.ErrorMessageFactory;
+import com.company.Structural.Flyweight.FirstImplementation.SystemErrorMessage;
 
 public class Main {
 
-
-
     public static void main(String[] args) {
 
-        Order order = new Order("101",99.99);
+        SystemErrorMessage msg = ErrorMessageFactory.getInstance().getError(ErrorMessageFactory.ErrorType.ServerError);
+        System.out.println(msg.getText("007"));
 
-        EmailFacade emailFacade = new EmailFacade();
-
-        boolean result = emailFacade.sendOrderEmail();
-
-        System.out.println("Order email" + ( result?"sent!":"not sent!"));
     }
-
-
 
 }
