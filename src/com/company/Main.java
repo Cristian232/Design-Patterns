@@ -1,37 +1,27 @@
 package com.company;
 
 
-import com.company.Behavioral.Strategy.FirstImplementation.Order;
+import com.company.Behavioral.Template.FirstImplementation.Order;
+import com.company.Behavioral.Template.FirstImplementation.OrderPrinter;
+import com.company.Behavioral.Template.FirstImplementation.TextPrinter;
 
-import java.util.LinkedList;
+import java.io.IOException;
 
 public class Main {
 
-    private static LinkedList<Order> orders = new LinkedList<>();
 
-    public static void main(String[] args) {
 
-        createOrders();
-        //print all orders
-        PrintService printService = new PrintService(new SummaryPrinter());
-        printService.printOrders(orders);
+    public static void main(String[] args) throws IOException {
+
+        Order order = new Order("1001");
+        order.addItem("Soda",2.50);
+        order.addItem("Pizza",15.99);
+        order.addItem("Ice",1.11);
+
+        OrderPrinter orderPrinter = new TextPrinter();
+        orderPrinter.printOrder(order,"1001.txt");
 
     }
 
-    public static void createOrders(){
-        Order o = new Order("100");
-        o.addItem("Soda", 2);
-        o.addItem("Chips", 10);
-        orders.add(o);
 
-        o = new Order("200");
-        o.addItem("Cake", 20);
-        o.addItem("Cookies", 5);
-        orders.add(o);
-
-        o = new Order("300");
-        o.addItem("Burger", 8);
-        o.addItem("Fries", 5);
-        orders.add(o);
-    }
 }
