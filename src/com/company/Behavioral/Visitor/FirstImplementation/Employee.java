@@ -1,7 +1,5 @@
 package com.company.Behavioral.Visitor.FirstImplementation;
 
-import com.company.Visitor;
-
 import java.util.Collection;
 
 public interface Employee {

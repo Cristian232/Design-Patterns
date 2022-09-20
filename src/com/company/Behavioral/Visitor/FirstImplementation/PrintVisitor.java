@@ -1,8 +1,6 @@
 package com.company.Behavioral.Visitor.FirstImplementation;
 
 
-import com.company.Visitor;
-
 public class PrintVisitor implements Visitor {
 
 

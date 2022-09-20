@@ -1,7 +1,5 @@
 package com.company.Behavioral.Visitor.FirstImplementation;
 
-import com.company.Visitor;
-
 public class Programmer extends AbstractEmployee{
 
     private String skill;

@@ -1,7 +1,5 @@
 package com.company.Behavioral.Visitor.FirstImplementation;
 
-import com.company.Visitor;
-
 import java.util.Collection;
 import java.util.Collections;
 
@@ -46,7 +44,7 @@ public class AbstractEmployee implements Employee{
 
     @Override
     public void accept(Visitor visitor) {
-        
+
     }
 
 
