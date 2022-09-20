@@ -1,6 +1,4 @@
-package com.company;
-
-import com.company.Behavioral.Strategy.FirstImplementation.Order;
+package com.company.Behavioral.Strategy.FirstImplementation;
 
 import java.util.Collection;
 import java.util.Iterator;

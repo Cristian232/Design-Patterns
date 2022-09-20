@@ -1,7 +1,5 @@
-package com.company;
+package com.company.Behavioral.Strategy.FirstImplementation;
 
-
-import com.company.Behavioral.Strategy.FirstImplementation.Order;
 
 import java.util.LinkedList;
 
