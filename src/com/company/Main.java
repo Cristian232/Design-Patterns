@@ -1,32 +1,26 @@
 package com.company;
 
 
-import com.company.Behavioral.Observer.ObserverExercise1.Channel;
-import com.company.Behavioral.Observer.ObserverExercise1.Subscriber;
+import com.company.Structural.Decorator.DecoratorExercise1.Espn;
+import com.company.Structural.Decorator.DecoratorExercise1.Hulu;
+import com.company.Structural.Decorator.DecoratorExercise1.SatelliteTv;
+import com.company.Structural.Decorator.DecoratorExercise1.SkyTv;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Channel youtubeWWE = new Channel();
+        SatelliteTv satelliteTv = new Espn(new Hulu(new SkyTv()));
 
-        Subscriber subscriber1 = new Subscriber("Dave Batista");
-        Subscriber subscriber2 = new Subscriber("John Cena");
-        Subscriber subscriber3 = new Subscriber("Undertaker");
+        satelliteTv.show(5);
 
-        youtubeWWE.subscribe(subscriber1);
-        youtubeWWE.subscribe(subscriber2);
-        youtubeWWE.subscribe(subscriber3);
+        System.out.println(satelliteTv.price());
 
-        youtubeWWE.unsubscribe(subscriber2);
+        SatelliteTv satelliteTv1 = new Hulu(new SkyTv());
 
-        subscriber1.subscribe(youtubeWWE);
-        subscriber2.subscribe(youtubeWWE);
-        subscriber3.subscribe(youtubeWWE);
+        satelliteTv1.show(300);
 
-        youtubeWWE.upload("Mania now");
-
-
+        System.out.println(satelliteTv1.price());
 
     }
 
